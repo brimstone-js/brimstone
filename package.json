@@ -1,0 +1,48 @@
+{
+  "name": "brimstone",
+  "version": "0.0.0",
+  "description": "A simple React translation library.",
+  "main": "./dist/index.js",
+  "files": [
+    "./dist/**/*"
+  ],
+  "scripts": {
+    "lint": "ts-standard",
+    "prebuild": "rimraf ./dist",
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/brimstone-js/brimstone.git"
+  },
+  "author": "Matthew Downs <matthew.downsc@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brimstone-js/brimstone/issues"
+  },
+  "homepage": "https://github.com/brimstone-js/brimstone#readme",
+  "dependencies": {
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.3",
+    "@types/node": "^18.0.0",
+    "@types/react": "^18.0.14",
+    "csv": "^6.1.5",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.75.7",
+    "rollup-plugin-terser": "^7.0.2",
+    "ts-loader": "^9.3.1",
+    "ts-standard": "^11.0.0",
+    "typescript": "^4.7.4"
+  },
+  "ts-standard": {
+    "ignore": [
+      "/dist",
+      "/scripts",
+      "/rollup.config.js"
+    ]
+  }
+}
