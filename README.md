@@ -50,7 +50,7 @@ function MyComponent() {
     <div>
       <h1>
         <Translate
-          eng="Welcome to my app!"
+          eng="Welcome to my website!"
           spa="¡Bienvenido a mi sito web!"
           deu="Willkommen in meiner Website!"
         />
