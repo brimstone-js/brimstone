@@ -7,12 +7,87 @@
 </head>
 
 <body>
-    <h1>Brimstone Demo</h1>
     <div id="demo"></div>
 
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="demo.js"></script>
+    <script crossorigin src="https://unpkg.com/@brimstone/react@0.1.2/dist/brimstone.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const supportedLanguages = ['eng', 'spa', 'deu']
+        const languageOptions = supportedLanguages.map(key => ({
+            label: Brimstone.Language[key],
+            value: key
+        }))
+        console.log(languageOptions)
+
+        function Demo() {
+            const [language, setLanguage] = React.useState('eng')
+
+            return (
+                <>
+                    <header>
+                        <h1 style={{ margin: 0 }}>
+                            Brimstone Demo
+                        </h1>
+                    </header>
+                    <main>
+                        <Brimstone.TranslationContext.Provider value={{
+                            language,
+                            setLanguage
+                        }}>
+                            <p style={{ margin: 0 }}>
+                                <Brimstone.Translate
+                                    eng="Sedimentary rock contains fossils because it was built up layer upon layer, often trapping and preserving animals, plants, footprints, and more within the layers of sediment."
+                                    spa="La roca sedimentaria contiene fósiles porque se construyó capa sobre capa, a menudo atrapando y preservando animales, plantas, huellas y más dentro de las capas de sedimento."
+                                    deu="Sedimentgestein enthält Fossilien, weil es Schicht für Schicht aufgebaut wurde und oft Tiere, Pflanzen, Fußabdrücke und mehr in den Sedimentschichten einfängt und bewahrt."
+                                />
+                            </p>
+                        </Brimstone.TranslationContext.Provider>
+                    </main>
+                    <footer>
+                        <select
+                            style={{ width: '100px' }}
+                            value={language}
+                            onChange={e => setLanguage(e.target.value)}
+                        >
+                            {languageOptions.map(({ label, value }) => (
+                                <option key={label} value={value}>
+                                    {label}
+                                </option>
+                            ))}
+                        </select>
+                    </footer>
+                </>
+            )
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('demo'))
+        root.render(<Demo />)
+    </script>
+
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+
+        #demo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #demo header {
+            padding: 25px 25px 0 25px;
+        }
+
+        #demo main {
+            padding: 25px;
+        }
+
+        #demo footer {
+            padding: 0 25px 25px 25px;
+        }
+    </style>
 </body>
 
 </html>
