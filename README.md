@@ -1,4 +1,4 @@
-# brimstone
+# Brimstone
 
 A simple React translation library.
 
@@ -23,7 +23,7 @@ Brimstone is an easy-to-use translation library that uses React context to chang
 Place the TranslationContext at the root of your application
 
 ```tsx
-import { Language, TranslationContext } from 'brimstone'
+import { Language, TranslationContext } from '@brimstone/react'
 import { useState } from 'react'
 
 function App() {
