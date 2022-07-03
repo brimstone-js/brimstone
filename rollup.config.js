@@ -3,7 +3,7 @@ import nodeResolve from '@rollup/plugin-node-resolve'
 import typescript from '@rollup/plugin-typescript'
 import { terser } from 'rollup-plugin-terser'
 import { resolve } from 'path'
-import { name, dependencies } from './package.json'
+import { dependencies } from './package.json'
 
 const input = resolve(__dirname, './src/index.ts')
 const globals = {
@@ -20,9 +20,9 @@ const development = {
       sourcemap: false
     },
     {
-      file: resolve(__dirname, `./dist/${name}.js`),
+      file: resolve(__dirname, `./dist/brimstone.js`),
       format: 'umd',
-      name,
+      name: 'Brimstone',
       sourcemap: false,
       globals
     }
@@ -38,9 +38,9 @@ const development = {
 const production = {
   input,
   output: {
-    file: resolve(__dirname, `./dist/${name}.min.js`),
+    file: resolve(__dirname, `./dist/brimstone.min.js`),
     format: 'umd',
-    name,
+    name: 'Brimstone',
     sourcemap: false,
     globals
   },
