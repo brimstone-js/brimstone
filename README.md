@@ -62,7 +62,7 @@ function App() {
 Then use the Translate component anywhere to render the current language
 
 ```tsx
-import { Translate } from 'brimstone'
+import { Translate } from '@brimstone/react'
 
 function MyComponent() {
   return (
