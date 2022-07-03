@@ -18,26 +18,7 @@ Brimstone is an easy-to-use translation library that uses React context to chang
 
 
 
-## Development
-
-### Requirements
-
-* [Node.js](https://nodejs.org)
-
-### NPM Scripts
-
-Run `npm install` first to install package dependencies.
-
-* `npm run lint` - Run the StandardJS linter to check for warnings and errors
-* `npm run build` - Build the library to the _dist_ folder
-* `npm test` - Run the Jest testing suite
-
-
-
-
 ## Usage
-
-### Context
 
 Place the TranslationContext at the root of your application
 
@@ -59,7 +40,7 @@ function App() {
 }
 ```
 
-Then use the Translate component anywhere to render the current language
+Use the Translate component anywhere to render the current language
 
 ```tsx
 import { Translate } from '@brimstone/react'
@@ -78,6 +59,27 @@ function MyComponent() {
   )
 }
 ```
+
+### Demo
+
+View a live demo [here](https://brimstone-js.github.io/brimstone/)
+
+
+
+
+## Development
+
+### Requirements
+
+* [Node.js](https://nodejs.org)
+
+### NPM Scripts
+
+Run `npm install` first to install package dependencies.
+
+* `npm run lint` - Run the StandardJS linter to check for warnings and errors
+* `npm run build` - Build the library to the _dist_ folder
+* `npm test` - Run the Jest testing suite
 
 
 
